@@ -1,0 +1,111 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>쿠키 집</title>
+<link
+	href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap"
+	rel="stylesheet">
+<link href="/32_final_mvc/resources/css/common.css" rel="stylesheet"
+	type="text/css" />
+<link href="/32_final_mvc/resources/css/header.css" rel="stylesheet"
+	type="text/css" />
+<link href="/32_final_mvc/resources/css/footer.css" rel="stylesheet"
+	type="text/css" />
+<link rel="shortcut icon" href="/32_final_mvc/favicon.ico" type="image/x-icon">
+</head>
+<body>
+	<header>
+		<div>
+			<ul>
+				<li><a href="test">HOME</a></li>
+				
+					
+						<li><a href="info.mc">MASTER</a></li>
+						
+							<li><a href="managementPage.mm">회원관리</a></li>
+						
+						<li><a href="logOut.mc">로그아웃</a></li>
+					
+					
+				
+				<!-- 
+				<li><a href="mailTest">Google SMTP Test</a></li>
+				 -->
+			</ul>
+		</div>
+		<div>
+			<ul>
+				<li><a href="noticeSearch.do">공지사항</a></li>
+				<li><a href="boardList.bo">질문과답변</a></li>
+			</ul>
+		</div>
+	</header>
+	
+	
+	
+	
+	
+	
+<section>
+	<table>
+		<tr>
+			<th colspan="2"><h2>게시물 상세내용</h2></th>
+		</tr>
+		<tr>
+			<td>작성자</td>
+			<td>MASTER</td>
+		</tr>
+		<tr>
+			<td>제목</td>
+			<td>542353</td>
+		</tr>
+		<tr>
+			<td>내용</td>
+			<td>
+				<div><p>asdasd<img title="rabbit.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGkAAACBCAYAAADDlZTVAAATOElEQVR4AeybwXGbQBSGXQIlUII6yEoVqARKUAkcc1QJnGNHQalAJagEZuzIIid1QH55ZjOazTP/YnbFI97MfJdcjPz5PZafXw//w7/fP1cLUDoUIAcPc2fuH2ANGtD1UAOTJN2fDNREjiQrS5Lux5FLETmCPEmKz5bLoKKyJCkeBnQBOCRJ8TiALhBFkqR3iixNkhSantPcuV6+0YKBohZJUjhy0Lm8/lh2L0+m+2X5/gb+31vWJkkKRyUJupVjOb2x7E47TNaeSiqTpDDk0noT5UCMS5J0H8p/pmi3FCfH8mrBtEFokhSZDFycX6wV1CvnlrjH8CRpI606abW5ciznfkl5kjSeRjoweMqxR/OIqUOSVIDORRYkyyGSTJIUYYpwpKZyXNq9KOmYsrs4ERBkEEEC8Q4MSdJBlLTzl9Ne2c87s7PMZorwC/cXtF9ZIk1RklTJISoX1NYrJugCsiQpeJBqJRFBkOKgLWHIQQFKB6NeEpkiiyvIvff4SsqmkCN8LmnCy/euT30EZO9HAQRVk1TOhM9EZK01Syr7Vh0XRCXlCh7GBfhaVj9FgAiSmHyKcv8J4i8kVUdAdtXxQwKdIjPTwozRJKl5X9JoQYcZF2YaBZLo7nbWHBM0zykiFEoqw3zV8YOCigjIeH2W/SBJteound+aU1WArCQ517fIL05p5rQzNgBmXFQ3Ur2eh/RMUS4JeiGNJp/62ZSCFuTixk5ROfUUQQYEyXJuYROlMQKyeKYKCoJU4TkP1+1Mz7Knl6FTUg46Qv8E6ZqiUsoaIce3NNN7+FH/HSM+RSL5xGkJZFwFMTmW3h57pSAC4vApmjQCKuQuBhd0tshdDItREaRylE0RSUvO9cpbjqUvLZlCkp2iGNQa0hKIGNxq4tmd/vhe61dZjp61M9LJWPY+56kIUiPQgBpsQH7Xwkx9naQBgmqelqidogjStoG/2XcghRnv0gxLS/Snw3GEbUAW4znvRpDnG2U9b2a/gk4ZF7D94DqsWDfQXxBPS2LLMfbmqpwtyILVzsh685+iuJJytt6UTtZmTFoiCxpemIkuqd2Th1X9HMEiSO0sUGEmpJwcHIUfPFc2Q9KSlqy4MbWzUILW4CL88LlTg8wjLRkuCPimJeMF1cuS/4XMf/0NK8wALsjFRJGEC6q8jpXz5wJOI2pnTNAheGEfp5jsKgh0QK+kCPAp4oIEihiSDrcXJl/M56Ddxy/MfERQ5T4PJEnRamfDJSGCr4TYI0kaV5h5YAwRVICOSwKfUVKcwoy/JLReFtdSRZIkE7t2xgU9mQySmr+SgPuepK0/syTwsSnaBvtiM2qyte2PvS8pHcNj1s76BT2aNSR1gqR0eGCyAtTOqKTnbyaDpOamcA5J6b4UiEUgSV/K50fT9Ur6092ZfkdVZW38/gn1pdd629W2WQ69fKWV2CRBICH1oQmiSwzYy2FJazm0isNaOLVDtC0VEEUgagu0CpTdIENDGwVRomDJFAIRwyBKEKhAY2QuZVTb9/R+br077Nzs3HNJ3SpSfnhI5dStew7nV88+e597U5WHdQnnprGYHW8NNF/9o8LspJ/ou4ABJUP5sI1dcysjNDFpFxKJIfknD+GHPPQNKKnZlaSB7uPtMwealjcrzC4CV6CQomFBSmASGFJ31yWou3Gdwq2RTobwGK5KzakkWBUYRyHuqDtZQ6IJiLTOrTQupHkSUv7WJe4PEGQffGconqc3UiG6KRYWpHjrnEqaBEAiedclWdSGH/Lo3BnHbqfQ9sQNvzHDSs8y5ef/wv358t29GBbGUmiQUqF9ABTF/zRDynfI478v/YoAjRh4NuB00pMEjm+dwph+3i5SINHCHMMCDUjdDnlalhcQFMOHYzRArDlPXIq+cHwhXTSMhAWpbidBSjEkW8iDACkkN/H3THCIk3roj1earSvnm/mTnxZuKhhI8VA+745S28iOWQPbU14OeV/XXW6+WXhVp5C3f/FQc3DJ8NDchEvQeBPg9Zp7bqoqNYdbPnFB3Tm4iHefCwVSJCRIFTGGJEPe3sXDjPlyrDn56cNm//vD2910eNmNbvv36x8GrKzdBNAMCRC6AoWf4279Xx2Spd7aMavCfEWp+/ZZeS2IE6F9ciRV8wlAQmXPIY/d1EZuOtZwrwvlxNpR5pt3h7hu2rvwCnN8Tab9eOO9Zv97V3THTQwJk4mfWHNUSKzNifJA7sQbB/+HFIl/4v+Ggnjb3yvQXz4gFYUJKY0C0eumXSKBaHtniAsJUI4RHEByF+9FV5iT6+6XsE7XTVjf0A9/rgHWHT1pePJSnAfh0bqdhPMBBJzP4oIYIR3OyvEe49rQPoOVtlmKCJKRkPwSiAMU9r6n8AcoR1ffRf/RQXAAwh7CX6Z95e1m38KqwKAwqZg4nJ//ZH7ZxL5uaEP4e+WeXuwgHAsX+QECHHI7r5dqQYz/W67T+A9ChFQeg/0BCqFASSDUmunABxko/7flGXOEoOx9d5AbYg7Vn2o/uoph2cMe3hiYuD0ZUKobg3yAEl4PEEsnlMl6y80apz14CcPCcYgQPbGAVSAlyuMMSQl5lnQ8k0T8Z9Nf2mHxu/bbj0X78pjVTQh5eJOgT9cJYmvIlf0jXnAcAwIYVeNuocSjjr+HKaeQTGiQtibKk9hZ7uCmtyxuUorbdAYWBEAC1ohT7ckRvqBwXrxR4Cr0ycU0f/1bNrUWNLh3katNM8r/vyDOOaRoKJC+nFHeTCHPZOMmWdzCTXCPhIWQh9DH7eml1/lOOs65WyQSp7OttHH6ABXQm+P/7NZaT4281kx/6JJ8FcSxsCAZcpMJ7Ca8u312ITBJWJ+OZmBhfcI6lYEiYP1A7Yc/vCasycCEA26XoQ5wAGnyU/cgEclXQRwPBdIX0wkSgfJxk57pKWHvw/GZCWp4tV8mS1s4iGqsu9yMj6EwrBON951q/yh7WDwOTLxfqMPjhWNKOOz2fEhb3hhQ/MW0AaZLNwGU7iY17N1/9Xmm6rf/0+lSBmon1FCAcrLpfnNg8ZWYIPxkWFSD3ZcdJHcsGUjPUXIAGIqQ8XGqnq+/ccoO0uevD4huIUgWN3HdpCYREhQmYWzsQoS9TqAYFiABCuBIWMcoDGZ5uR1jQt84p1oQI6FonNI/Xy6CkllD2vx6/yi5yVjdpCcREhSFOndvDSHP95oThLCHMAdYCIcIf96Jw7qBSZUOQNtO6rurcIfx7fEUxHgNhN0KHCfWosKAtOm1/lFyk2E3AVQLgdr2pu4mv7D34QsZSNvoNYBkAYXJYlhwF0OCuAhVhXAKNygTgrFibACmFcTyA5cKCNLf+kfJTeZzr5tsSYQS9mrvugiTKNNyiCFBgf62VN9gtYPiOgtjhdu5IG4fg/hg2oKCtHFq/yi5yZxyU/fD3ttP98EEItxkBeqB6vOskCDs6WkTA3dzQdyaGR/gMaDCg7RhSr8IuclsBqg3AIog2ZIIzvbkZXbSkucz4a6ewp6sn04XlLyeZJPmJha/Sb7R4RTU9SS4yQAUwl7nJCJ4treVjsPEvTbqYlk/BQdFAiRsggaFhMSgh/+1RZzkZCP8AzelN7KbRBJhDXsKqBsrzoYAKRgoBRb21bDmFCwkDt1hQmqe3C+5YWo/dhMnET5hr+v1aeajvTF5CH3+oCAfUHNqgiUPcnJQDEMH37+yJ8BhRUOB9Nmr/RLkJoOwx0mEPexhb08HVV1ylqutdGw2oBA2fQB13NohAc4Pn7m1F8PKLxhdxaFAWv/Xy+LkJuOCgpts2Z4lkfhgXIk7kY9fewGyPgUUSQElYW0n8NcP+BXOg60mJBMsbPm4IVFOBnbVuSBG7cWwsIuxf1FVvsFIOaFA+vSVy6LkJgNQCHsi27OsT3qhC1AzH+nNoDo6CrKA2u65gxXAbH/h/eOGx/hKsITF7QwrH1BYyFiTJCdb8QO4yTAohD11fRK7ESKRsIJC6MMa5d3n08Lf7JpiU3XxL91w9sg152NbKPB3+uGCorgSbGnPmQCHx1pLcrIVP4CbkgxKX58Ait0UHBRCHyAB1ojK89x1ZuXLl0lQ7p4fNmWHlf3aPe7uoaW41EGh7VxzR1WR5dOAu4QF4bGlPUR1Hl91qJCaXuobJ1AGoOT61AHUdC2RsIPaRVrw/I0mNrivb7b26M1XmfXvTjN73xvuumrkVZcCUtAvpJfA9CvBens4rtHlhAppbW3f4iZ6hwMU3MSgNvkkEjZQnPXtXnC5+WnnCmN2rTNHtiRdEHMn1Zhpz44yi18b6/6Odjx/dN1EhD4X1EuP3G6Gl53DkOywFGjalWCGpbXboUDW/jHGOpIThjr8su6lvimAgptkItFdUBBApVeNAQCrALKtbogbAo+vnwqQmV11Op/lKwWswhXiE5mLjhko9QSlTl4hlu0qDLs6ji9GcsJQh1/WTupbS6AMQKmJBGd8NlAi62udN5hdZNV3DWMzV1YXDXN/b1k214X01uPFSiaoALNDk1eI5d22ans3wLAwzgjJCUMdflkzsayIQBmAQtgTiYTI+HxAKen5kabJQV1EEIa42d+x9VPa2/8woJe54/Lz9e8i0oBZoK2Z3A8CBNwgo8LS2iUUFQwrM74EyQlLnRoaJ5Yl19aGA6p1/tVWOKxvV49xC999S26T7VizXDfVPdNHpux2YIpwFxNS+5dH9mqf7EPy1mi+C1e0I7mwnJf7l2OK5hRSw4SyKIEyANUkQCHsBQIlCt5DK0YHAvTjtnp3cxY6uXmu93lkhVQ7nWWaqT/blxi2+UBDgQxIgCXb+T72H5sfk7dMB4UihXE1k5wwpTaumVCWaqSwZwXlTSZEwQtQR9fPCATpwLKHMn8L9f6t6vNYmwb3PofqrHNNCzmUaywbMAnuiesucB05+/FiX+elxS3T3yVv9gHCUKAO44mRnDClNq5+sayaQBkGhUTCCkoUvOyqw6snBHER11Tkojlo8wUFR+GiIu9cMDANGrSBxoRLJ54ExCq+vx3CYw8UBiOFsaRITtjq6gmASjKodRKUXKMsoHa/E7NC2r/0Qbem2ld/t/VYgEIigQkfNfRchqUCQ2isIffwjvk7tKZ9LQDahfv3fm+OrLjN/PQ5Ct8nzcH6a71QIPTPipKcsNXlE6teKI0SKNMBVKdkQqmjPOvUt41dZ3cnNs3hSx5wVLDQ2DjDTLrzInfiGcAdg4pwEwzkwqsWt4EBVMvMCkxqt9VGsL5bfhtACShC/3SVJDm5kN+TAJVgUNoaJQte3kLyJhRw1aFVncPe8Y0EaHaVm6rv++hBbreqbdEN7UnG2/HfmTE3XWj+RJBYAFZDO++zHi3m3fdO2mORBkKBYnZLzYsWkZxcyPfJFeNKIwQqbQGlZH4y/JEI1PbZQ82e90aafUtrTOuC693sj1P1dAND9NfRpilyP9AVA9vdLs/kYUL9pEy+pt2doXCf6D9OcnIl2wEAVU2gjBfUOgsoDn8eV4maCgKo4Fngv/9VzfdUQBKYhKaAg6IaQLvmsSolFIj7bCY5uVSQgwCqlkE1ANTEMgalZH5K+JOuYlAC1r5lNTZA2LkQG7esSkATwBRoAl428pyP+0pTv0UkJ5cKeiBANa8EqPGlLqg1ADVJggruKm+qvm3mIPPTjq739/DcrgXV8r6KLoFJaAKeAtCuVo8850Vf1SQn1wp84CdjSyIrxpWk20G9CFBK5qeA0lzlDYGp+deZH1rqVUB7Ft6CBAPiXXYJTEBTwEl43VSKNZs1EKolOfnQ6RwMUMUuKLoUvmq8vk7ZXcUZoA6rbckD5sAno83B5aPdMJiadzUnGCwNmAJNgddN8evFORMkJ1867RcA1PLnMqA865Ql/JGmqiFQgSXWLE+SoQPToVnhBRfOwedLkpx8qjsvAqgYQK0YB1Ay/AV2FUKgDywIsCDAggBKAtOhKeAYXjbi8zTTOSMkJ5/q9guTY/oUZ0CVGG/483GVDyxlzWJ3acCkwyzQFHiBJV6fIEVITr6V1YsBilyVJlgAddqussGCu2zAFJcp4BSIFnlekyA5Z0pZn+Dj0X0iyTElzQDl6yo7LLlmIRvkUCjSdwWYhOYFJ+ExQEUACunPl48iOWdSYZ0IrqolVxnVVR5YTb5hEBKwPOm76jC5jgloKrzgSpGiJOdMK9STJUf3qSZXpaWrOAOUIZDXKy8sm7sYmDckCmgKOAFPaoav6uiYCMnpCQr9hB8/i/DXJ8GuQgaIAphDINJ1hqWHQd1dEthGLzAJTYKT8KQAUFeKVE1yepJydWKsVVGClZQhMDgsOzAOiRKaBk7AkwJEqTQpToqQnJ6mXHfAITAlQ6CE5V2zOBu0A5PQ2GkqOIYnBYisBKmI5PRU5asjwIqSq5IWWMJdIn3XganQJDgJTwCE0qQ4qYjk9HTlu0PAKiJnUSbI7iqV2SCHQh2YcJgNmgIPqiPFSE4h6Yx2TrBQDMcJVrPMBl13kRr8gCnQBDiGlyYlSDFShOQUonrMQHAphGBFCVac3JUgYEkJrFNI9EAjNRO4JEGLk2IUIotIzs9BBTFIAhYhYFECFl1NImDRBhK5rJjk/Nz1X4SE3SqPkqbVAAAAAElFTkSuQmCC" alt="sadfsdf" width="105" height="129" /></p></div>
+			</td>
+		</tr>
+		
+			<tr>
+				<td>첨부파일</td>
+				<td>
+					<a href="" download="lion.png">
+						lion.png
+					</a>
+				</td>
+			</tr>
+		
+		<tr>
+			<td colspan="2">
+				
+					<a href="boardReplyForm.bo?qna_num=8">[답글]</a>
+					
+						<a href="boardUpdateForm.bo?qna_num=8">[수정]</a>
+						<a href="boardDelete.bo?qna_num=8">[삭제]</a>
+					
+				
+				<a href="boardList.bo">[목록]</a>
+			</td>
+		</tr>
+	</table>
+</section>
+
+
+<footer> Copyrights by &copy; since 1980 </footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

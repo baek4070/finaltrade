@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.koreate.user.dao.UserDAO">
+
+	<resultMap id="userMap" type="net.koreate.user.vo.UserVO">
+		<result property="uno" column="uno"/>
+		<result property="u_id" column="u_id"/>
+		<result property="u_pw" column="u_pw"/>
+		<result property="u_name" column="u_name"/>
+		<result property="u_birth" column="u_birth"/>
+		<result property="u_addr_post" column="u_addr_post"/>
+		<result property="u_addr" column="u_addr"/>
+		<result property="u_addr_detail" column="u_addr_detail"/>
+		<result property="u_phone" column="u_phone"/>
+		<result property="u_visit_date" column="u_visit_date"/>
+		<result property="u_withdraw" column="u_withdraw"/>
+		<result property="u_info" column="u_info"/>
+		
+		<collection property="authList" resultMap="authMap"/>
+		
+	</resultMap>
+	
+	<resultMap id="authMap" type="net.koreate.user.vo.AuthVO">
+		<result property="u_id" column="u_id"/>
+		<result property="u_auth" column="u_auth"/>
+	</resultMap>
+	
+	<insert id="signUp" parameterType="net.koreate.user.vo.UserVO">
+			INSERT INTO trade_user(u_id,u_pw,u_name,u_birth,u_addr_post,u_addr,u_addr_detail,u_phone,u_info) 
+			VALUES(#{u_id},#{u_pw},#{u_name},#{u_birth},#{u_addr_post},#{u_addr},#{u_addr_detail},#{u_phone},#{u_info})	
+	</insert>
+	
+	<!-- void insertAuth(String u_id) throws Exception; -->
+	<insert id="insertAuth" parameterType="String">
+		INSERT INTO user_auth(u_id,u_auth) VALUES(#{u_id},'ROLE_USER')
+	</insert>
+	
+	<!-- UserVO getUserById(String u_id) throws Exception; -->
+	<select id="getUserById" parameterType="String" resultMap="userMap">
+		SELECT user.*, auth.u_auth FROM 
+		trade_user AS user
+		LEFT OUTER JOIN
+		user_auth AS auth
+		on user.u_id = auth.u_id
+		WHERE user.u_id = #{u_id}
+		AND u_withdraw = 'n'
+	</select>
+	
+	<!-- void getUpdateVisitDate(String u_id) throws Exception; -->
+	<update id="getUpdateVisitDate" parameterType="String">
+		UPDATE trade_user SET u_visit_date = now() WHERE u_id = #{u_id}
+	</update>
+	
+	<!-- UserVO updateUser(UserVO vo) throws Exception; -->
+	<update id="updateUser" parameterType="net.koreate.user.vo.UserVO">
+		UPDATE trade_user SET 
+		u_name = #{u_name},
+		u_birth = #{u_birth},
+		u_addr_post = #{u_addr_post},
+		u_addr = #{u_addr},
+		u_addr_detail = #{u_addr_detail},
+		u_phone = #{u_phone} 
+		WHERE u_id = #{u_id}
+	</update>
+	
+	<!-- int withdraw(UserVO vo) throws Exception; -->
+	<update id="withdraw" parameterType="net.koreate.user.vo.UserVO">
+		UPDATE trade_user SET u_withdraw = 'y' WHERE u_id = #{u_id}
+	</update>
+	
+	<!-- UserVO updateData(UserVO vo) throws Exception; -->
+	<select id="updateData" parameterType="net.koreate.user.vo.UserVO" resultMap="userMap">
+		SELECT * FROM trade_user WHERE uno = #{uno}
+	</select>
+	
+	<select id="select" parameterType="String" resultMap="userMap">
+		SELECT * FROM trade_user WHERE u_id = #{u_id}	
+	</select>
+	
+	<!-- List<UserVO> getAll() throws Exception; -->
+	<select id="getAll" resultMap="userMap">
+		SELECT user.*,u_auth FROM
+		trade_user AS user
+		LEFT OUTER JOIN
+		user_auth AS auth
+		on user.u_id = auth.u_id
+		ORDER BY uno DESC
+ 	</select>
+	
+	<!-- List<AuthVO> getAuthById(String u_id) throws Exception; -->
+	<select id="getAuthById" parameterType="String" resultType="net.koreate.user.vo.AuthVO">
+		SELECT u_auth FROM user_auth WHERE u_id = #{u_id}
+	</select>
+	
+	<!-- void getDeleteAuth(AuthVO vo) throws Exception; -->
+	<delete id="getDeleteAuth" parameterType="net.koreate.user.vo.AuthVO">
+		DELETE FROM user_auth WHERE u_id = #{u_id} AND u_auth = #{u_auth}
+	</delete>
+	
+	<!-- void getAddAuth(AuthVO vo) throws Exception; -->
+	<insert id="getAddAuth" parameterType="net.koreate.user.vo.AuthVO">
+		INSERT INTO user_auth VALUES(#{u_id},#{u_auth})
+	</insert>
+	
+	<!-- void deleteF(UserVO vo) throws Exception; -->
+	<update id="deleteF" parameterType="net.koreate.user.vo.UserVO">
+		UPDATE trade_user SET u_withdraw = #{u_withdraw} WHERE u_id = #{u_id}
+	</update>
+	
+	<!-- List<UserVO> getSearchList(String word) throws Exception; -->
+	<select id="getSearchList" parameterType="String" resultMap="userMap">
+		SELECT user.*,u_auth FROM
+		trade_user AS user
+		LEFT OUTER JOIN
+		user_auth AS auth
+		on user.u_id = auth.u_id
+		WHERE u_name = #{u_name} 
+		ORDER BY uno DESC
+	</select>
+<!-- 	
+	String onlyAuth(String u_id) throws Exception;
+	<select id="onlyAuth" parameterType="String" resultType="">
+		SELECT u_auth FROM user_auth WHERE u_id = #{u_id}
+	</select>
+	
+ -->	
+ 
+</mapper>

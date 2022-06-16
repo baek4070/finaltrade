@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.koreate.board.dao.BoardDAO">
+	<!-- 게시물 총 개수 -->
+	<select id="listCount" resultType="int">
+		SELECT COUNT(*) FROM board
+		<trim prefix="WHERE" prefixOverrides="AND|OR">
+			<if test="searchType == 'title' and keyword != null and keyword != '' ">
+				AND title like CONCAT('%', #{keyword}, '%')
+			</if>
+			<if test="searchType == 'content' and keyword != null and keyword != '' ">
+				AND content like CONCAT('%', #{keyword}, '%')
+			</if>
+			<if test="searchType == 'writer' and keyword != null and keyword != '' ">
+				AND writer like CONCAT('%', #{keyword}, '%')
+			</if>	
+			<if test="searchType == 'titcont' and keyword != null and keyword != '' ">
+				AND (
+				title like CONCAT('%', #{keyword}, '%')
+				OR
+				content like CONCAT('%', #{keyword}, '%')
+				)
+			</if>
+			<choose>
+				<when test="tradeType == 'buy' and tradeType != null and tradeType != '' ">
+					AND tradeType = #{tradeType}
+					<if test="category == 'one' and category != null and category != '' "> AND category = #{category}</if>
+					<if test="category == 'two' and category != null and category != '' "> AND category = #{category}</if>
+					<if test="category == 'three' and category != null and category != '' "> AND category = #{category}</if>
+					<if test="category == 'four' and category != null and category != '' "> AND category = #{category}</if>
+					<if test="category == 'five' and category != null and category != '' ">  AND category = #{category}</if>
+				</when>
+				<when test="tradeType == 'sell' and tradeType != null and tradeType != '' ">
+					AND tradeType = #{tradeType}
+					<if test="category == 'one' and category != null and category != '' "> AND category = #{category}</if>
+					<if test="category == 'two' and category != null and category != '' "> AND category = #{category}</if>
+					<if test="category == 'three' and category != null and category != '' "> AND category = #{category}</if>
+					<if test="category == 'four' and category != null and category != '' "> AND category = #{category}</if>
+					<if test="category == 'five' and category != null and category != '' "> AND category = #{category}</if>
+				</when>
+			</choose>	
+		</trim>
+	</select>
+	
+	<select id="list" parameterType="criteria" resultType="boardVO">
+		SELECT * FROM board
+		<trim prefix="WHERE" prefixOverrides="AND|OR">
+			<if test="searchType == 'title' and keyword != null and keyword != '' ">
+				AND title like CONCAT('%', #{keyword}, '%')
+			</if>
+			<if test="searchType == 'content' and keyword != null and keyword != '' ">
+				AND content like CONCAT('%', #{keyword}, '%')
+			</if>
+			<if test="searchType == 'writer' and keyword != null and keyword != '' ">
+				AND writer like CONCAT('%', #{keyword}, '%')
+			</if>	
+			<if test="searchType == 'titcont' and keyword != null and keyword != '' ">
+				AND (
+				title like CONCAT('%', #{keyword}, '%')
+				OR
+				content like CONCAT('%', #{keyword}, '%')
+				)
+			</if>
+			<choose>
+				<when test="tradeType == 'buy' and tradeType != null and tradeType != '' ">
+					AND tradeType = #{tradeType}
+					<if test="category == 'one' and category != null and category != '' "> AND category = #{category}</if>
+					<if test="category == 'two' and category != null and category != '' "> AND category = #{category}</if>
+					<if test="category == 'three' and category != null and category != '' "> AND category = #{category}</if>
+					<if test="category == 'four' and category != null and category != '' "> AND category = #{category}</if>
+					<if test="category == 'five' and category != null and category != '' "> AND category = #{category}</if>
+				</when>
+				<when test="tradeType == 'sell' and tradeType != null and tradeType != '' ">
+					AND tradeType = #{tradeType}
+					<if test="category == 'one' and category != null and category != '' "> AND category = #{category}</if>
+					<if test="category == 'two' and category != null and category != '' "> AND category = #{category}</if>
+					<if test="category == 'three' and category != null and category != '' "> AND category = #{category}</if>
+					<if test="category == 'four' and category != null and category != '' "> AND category = #{category}</if>
+					<if test="category == 'five' and category != null and category != '' "> AND category = #{category}</if>
+				</when>
+			</choose>
+		</trim>
+		ORDER BY bno DESC
+		limit #{startRow}, #{perPageNum}
+	</select>
+
+	<!-- 삽입 -->
+	<insert id="insert" parameterType="boardVO">
+		INSERT INTO board (title,content,writer,writerId,fileName,filePath,tradeType,category)
+		VALUES (#{title},#{content},#{writer},#{writerId},#{fileName},#{filePath},
+		<choose>
+			<when test="tradeType == '삽니다'">"buy",</when>
+			<when test="tradeType == '팝니다'">"sell",</when>
+		</choose>
+		#{category})
+	</insert>
+	
+	<!-- 선택 -->
+	<select id="read" parameterType="int" resultType="boardVO">
+		SELECT * FROM board WHERE bno = #{bno}
+	</select>
+	
+	<!-- 수정 -->
+	<update id="update" parameterType="BoardVO">
+		UPDATE board SET
+		title		= #{title},
+		content		= #{content},
+		<choose>
+			<when test="tradeType == '필요해요'">tradeType = "buy",</when>
+			<when test="tradeType == '필요없어요'">tradeType = "sell",</when>
+		</choose>
+		category = #{category},
+		updateDate	= now()
+		WHERE bno = #{bno}
+	</update>
+	
+	<!-- 삭제 -->
+	<delete id="delete" parameterType="int">
+		DELETE FROM board WHERE bno = #{bno}
+	</delete>
+	
+	<!-- 내가 찜한 리스트 가져오기 -->
+	<select id="selectWishlist" resultType="boardCommentVO">
+		SELECT * FROM wish WHERE uno = #{uno}
+	</select>
+	
+	<!-- 찜목록 추가 -->
+	<insert id="addWishlist" parameterType="boardVO">
+		INSERT INTO wish(bno,uno) VALUES (#{bno},#{uno})
+	</insert>
+	
+	<!-- 찜목록 삭제 -->
+	<insert id="deleteWishlist" parameterType="boardVO">
+		DELETE FROM wish WHERE bno = #{bno} AND uno = #{uno}
+	</insert>
+	
+	<!-- 조회수 올리기 -->
+	<update id="updateViewCount" parameterType="BoardVO">
+		UPDATE board SET
+		viewcnt = viewcnt + 1
+		WHERE bno = #{bno}
+	</update>
+</mapper>
